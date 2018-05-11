@@ -14,7 +14,8 @@ void PriorityQueue::insert(Key k) {
 }
 
 void PriorityQueue::insert(KeyValuePair kv) {
-	nodes_.push_back(kv);
+	if(size_ == 0){nodes_.resize(1);}
+    nodes_.push_back(kv);
     ++size_;
     heapifyUp(size_);
 }
@@ -32,7 +33,7 @@ bool PriorityQueue::isEmpty() const {
 }
 
 size_t PriorityQueue::size() const {
-    return nodes_.size();
+    return nodes_.size() - 1;
 }
 
 nlohmann::json PriorityQueue::JSON() const {

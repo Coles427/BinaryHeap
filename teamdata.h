@@ -2,16 +2,17 @@
 #define _TEAMDATA_H_
 
 #include <string>
+#include <vector>
+#include <map>
 
 class TeamData {
  public:
- 	TeamData(std::string filename);
- 	int numPlayers() const;
- 	double winPercentages(int i, int j) const { return winPercentages_[i][j]; }
+	explicit TeamData(std::string filename);
+	int numPlayers() const;
+ 	//double winPercentages(int i, int j) const { return winPercentages_[i][j]; }
+	std::map<int, std::map<int, double>>winPercentages_;
 
- private:
-	// TODO: decide the type of this variable.
-	// winPercentages_;
+private:
 
 	int numPlayers_;
 

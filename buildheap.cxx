@@ -37,6 +37,8 @@ void printQueue(PriorityQueue queue, size_t maxSize,int numOps ) {
     }
 
     jsonQueue["metadata"]["maxHeapSize"] = maxSize;
+    jsonQueue["metadata"]["numOperations"] = numOps;
+    jsonQueue["metadata"]["size"] = queue.size();
 
     std::cout<< jsonQueue.dump(2);
 }
